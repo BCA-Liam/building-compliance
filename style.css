@@ -1,0 +1,289 @@
+/* General Styles */
+:root {
+    --primary-color: #0056b3; /* A strong blue for branding */
+    --secondary-color: #003c7a; /* A darker blue for accents */
+    --accent-color: #28a745; /* A green for buttons/highlights (success) */
+    --text-color: #333;
+    --light-bg: #f8f9fa;
+    --dark-bg: #343a40;
+    --dark-text: #fff;
+    --border-color: #ddd;
+}
+
+body {
+    font-family: Arial, sans-serif; /* A clear, readable font */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    background-color: #fff;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+h1, h2, h3 {
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+h1 { font-size: 2.8em; }
+h2 { font-size: 2.2em; }
+h3 { font-size: 1.6em; }
+
+p {
+    margin-bottom: 15px;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--dark-text);
+    padding: 12px 25px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #218838; /* A darker green on hover */
+    text-decoration: none;
+}
+
+.btn-small {
+    padding: 8px 15px;
+    font-size: 0.9em;
+}
+
+/* Header */
+header {
+    background-color: var(--primary-color);
+    color: var(--dark-text);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.images.png {
+    max-height: 50px; /* Adjust this value to make your logo taller or shorter */
+    width: auto; /* Keeps the proportions of your logo correct */
+    vertical-align: middle; /* Helps align it nicely with other elements if any */
+}
+
+/* If your logo has text next to it, and you want to control space */
+.logo a {
+    display: flex; /* Makes the logo and text align nicely if you put text next to the image */
+    align-items: center;
+    gap: 10px; /* Space between logo image and text, if you want text too */
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    color: var(--dark-text);
+    font-size: 1.8em;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: var(--dark-text);
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--light-bg);
+    text-decoration: none;
+}
+
+/* Hero Section */
+.hero {
+    background: url('https://via.placeholder.com/1500x500?text=Modern+Building+Background') no-repeat center center/cover;
+    color: var(--dark-text);
+    text-align: center;
+    padding: 100px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 0;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    color: var(--dark-text);
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero p {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+/* Section Styling */
+.section-padded {
+    padding: 80px 0;
+}
+
+.bg-light {
+    background-color: var(--light-bg);
+}
+
+.bg-dark {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+}
+
+.bg-dark h2, .bg-dark p, .bg-dark a {
+    color: var(--dark-text);
+}
+
+/* Service Grid */
+.service-grid, .case-study-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.service-item, .case-study-item {
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.service-item:hover, .case-study-item:hover {
+    transform: translateY(-5px);
+}
+
+.service-item h3, .case-study-item h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+/* Contact Form */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: #fff; /* Ensure input fields are white on dark background */
+    color: var(--text-color);
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-info {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--secondary-color);
+    color: var(--dark-text);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+}
+
+footer .social-links a {
+    color: var(--dark-text);
+    margin: 0 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column;
+        margin-top: 15px;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    .hero h1 {
+        font-size: 2.5em;
+    }
+
+    .hero p {
+        font-size: 1.1em;
+    }
+
+    .section-padded {
+        padding: 50px 0;
+    }
+
+    .service-grid, .case-study-grid {
+        grid-template-columns: 1fr;
+    }
+}
